@@ -15,8 +15,51 @@
   </head>
   <body>
     <div class="container">
-      <h1>Hello World</h1>
+      <h1>
+        Greetings! <br />
+        What's your weather like?
+      </h1>
+      <div class="weatherApp">
+        <div class="search-container">
+          <form>
+            <input
+              type="text"
+              class="searchBar"
+              placeholder="Search for a city.."
+              name="search"
+              autocomplete="off"
+            />
+            <button type="submit" value="Go">Search</button>
+          </form>
+        </div>
+        <div class="row">
+          <div class="col-6">
+            <h2>KNOXVILLE</h2>
+            <ul>
+              <li>Humidity: 73%</li>
+              <li>Wind: 2km/h</li>
+              <li>Precipitation: 0%</li>
+            </ul>
+          </div>
+          <div class="col-6">
+            <h2>15°C | °F</h2>
+            <img src="images/cloudy.png" class="mainImg" alt="partly cloudy" />
+          </div>
+        </div>
+        <div class="forecast">
+          <div class="row">
+            <div class="col">MONDAY</div>
+            <div class="col">TUESDAY</div>
+            <div class="col">WEDNESDAY</div>
+            <div class="col">THURSDAY</div>
+            <div class="col">FRIDAY</div>
+            <div class="col">SATURDAY</div>
+            <div class="col">SUNDAY</div>
+          </div>
+        </div>
+      </div>
     </div>
+    <small>Open Source code by Jennifer Jaynes</small>
     <script src="sourcefiles/javascript.js"></script>
   </body>
 </html>

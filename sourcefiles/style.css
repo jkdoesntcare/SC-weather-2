@@ -1,3 +1,70 @@
 h1 {
-  color: blueviolet;
+  color: #ffa2b8;
+  text-align: center;
+  width: 500px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+h2 {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: bolder;
+}
+
+ul {
+  list-style-type: none;
+  color: #ffa2b8;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+small {
+  text-align: center;
+  display: block;
+}
+
+form {
+  margin: 0 auto;
+  text-align: center;
+}
+
+button {
+  color: #ffa2b8;
+  background-color: #fff;
+  border: 5px double #ffa2b8;
+  border-color: #ffa2b8;
+  border-width: 3px;
+  border-radius: 25px;
+}
+
+.searchBar {
+  width: 300px;
+  color: #ffa2b8;
+  background-color: #fff;
+  border: 5px double #ffa2b8;
+  border-color: #ffa2b8;
+  border-width: 3px;
+  border-radius: 25px;
+  margin: 10px;
+}
+
+.weatherApp {
+  width: 500px;
+  border: 5px double #ffa2b8;
+  border-color: #ffa2b8;
+  border-width: 3px;
+  border-radius: 25px;
+  background-color: #fff;
+  box-shadow: 9px 9px 5px rgb(212, 212, 212);
+  padding: 10px;
+}
+
+.mainImg {
+  width: 150px;
+}
+
+.col-6 {
+  text-align: center;
+}
+
+.forecast {
+  width: 500px;
 }
