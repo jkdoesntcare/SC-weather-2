@@ -11,6 +11,7 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="sourcefiles/style.css" />
   </head>
   <body>
@@ -34,15 +35,16 @@
         </div>
         <div class="row">
           <div class="col-6">
-            <h2>KNOXVILLE</h2>
+            <h2 id="searchCity">KNOXVILLE</h2>
+            <p id="time">Friday 2pm</p>
             <ul>
-              <li>Humidity: 73%</li>
-              <li>Wind: 2km/h</li>
-              <li>Precipitation: 0%</li>
+              <li id="humidity">Humidity: 73%</li>
+              <li id="wind">Wind: 2km/h</li>
+              <li id="precip">Precipitation: 0%</li>
             </ul>
           </div>
           <div class="col-6">
-            <h2>15°C | °F</h2>
+             <h2 id="searchTemp">15</h2>
             <img src="images/cloudy.png" class="mainImg" alt="partly cloudy" />
           </div>
         </div>
@@ -61,5 +63,6 @@
     </div>
     <small>Open Source code by Jennifer Jaynes</small>
     <script src="sourcefiles/javascript.js"></script>
+    </script>
   </body>
 </html>
