@@ -22,30 +22,31 @@
       </h1>
       <div class="weatherApp">
         <div class="search-container">
-          <form>
+          <form id="searchForm">
             <input
               type="text"
               class="searchBar"
               placeholder="Search for a city.."
               name="search"
               autocomplete="off"
+              id="cityInput"
             />
             <button type="submit" value="Go">Search</button>
           </form>
         </div>
         <div class="row">
           <div class="col-6">
-            <h2 id="searchCity">KNOXVILLE</h2>
+            <h2 id="searchCity">Knoxville</h2>
             <p id="time">Friday 2pm</p>
             <ul>
               <li id="humidity">Humidity: 73%</li>
               <li id="wind">Wind: 2km/h</li>
-              <li id="precip">Precipitation: 0%</li>
+          
             </ul>
           </div>
           <div class="col-6">
-             <h2><span id="searchTemp">15</span> C° | F°</h2>
-            <img src="..." id="icon" />
+             <h2><span id="searchTemp">15</span> C° | <a href="a" id="faren">F°</a></h2>
+            <img src="images/sun.png" id="icon" />
           </div>
         </div>
         <div class="forecast">

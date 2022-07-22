@@ -34,11 +34,35 @@ function displayTemperture(response) {
   humidity.innerHTML = `Humidity: ${response.data.main.humidity}`;
   windSpeed.innerHTML = `Wind: ${response.data.wind.speed}km/h`;
   time.innerHTML = formatDate(response.data.dt * 1000);
-  icon.setAttribute("src", `http://openweathermap.org/img/wn/10d@2x.png`);
+  icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
-let apiKey = "ee765fe52026bce2fd4a1b8bc1e42692";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=New York&appid=${apiKey}&units=metric`;
+function search(city) {
+  let apiKey = "ee765fe52026bce2fd4a1b8bc1e42692";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayTemperture);
+}
 
-console.log(apiUrl);
-axios.get(apiUrl).then(displayTemperture);
+function handleSubmit(event) {
+  event.preventDefault();
+  let city = document.querySelector("#cityInput");
+  search(city.value);
+}
+
+let form = document.querySelector("#searchForm");
+form.addEventListener("submit", handleSubmit);
+
+function showFarenTemp(event) {
+  event.preventDefault();
+  let farenTemp = (14 * 9) / 5 + 32;
+  let temperture = document.querySelector("#searchTemp");
+  temperture.innerHTML = Math.round(farenTemp);
+}
+
+let faren = document.querySelector("#faren");
+faren.addEventListener("click", showFarenTemp);
+
+let celsiTemp = document.querySelector("#searchTemp");
