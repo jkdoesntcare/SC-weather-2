@@ -26,6 +26,7 @@ function displayTemperture(response) {
   let city = document.querySelector("#searchCity");
   let humidity = document.querySelector("#humidity");
   let windSpeed = document.querySelector("#wind");
+  let description = document.querySelector("#description");
   let time = document.querySelector("#time");
   let icon = document.querySelector("#icon");
 
@@ -35,6 +36,7 @@ function displayTemperture(response) {
   city.innerHTML = response.data.name;
   humidity.innerHTML = `Humidity: ${response.data.main.humidity}`;
   windSpeed.innerHTML = `Wind: ${response.data.wind.speed}km/h`;
+  description.innerHTML = response.data.weather[0].description;
   time.innerHTML = formatDate(response.data.dt * 1000);
   icon.setAttribute(
     "src",
