@@ -29,6 +29,8 @@ function displayTemperture(response) {
   let time = document.querySelector("#time");
   let icon = document.querySelector("#icon");
 
+  celsiTemp = response.data.main.temp;
+
   temperture.innerHTML = Math.round(response.data.main.temp);
   city.innerHTML = response.data.name;
   humidity.innerHTML = `Humidity: ${response.data.main.humidity}`;
@@ -57,12 +59,21 @@ form.addEventListener("submit", handleSubmit);
 
 function showFarenTemp(event) {
   event.preventDefault();
-  let farenTemp = (14 * 9) / 5 + 32;
+  let farenTemp = (celsiTemp * 9) / 5 + 32;
   let temperture = document.querySelector("#searchTemp");
   temperture.innerHTML = Math.round(farenTemp);
+}
+
+function showCelsiTemp(event) {
+  event.preventDefault();
+  let celsiTemperture = document.querySelector("#searchTemp");
+  celsiTemperture.innerHTML = Math.round(celsiTemp);
 }
 
 let faren = document.querySelector("#faren");
 faren.addEventListener("click", showFarenTemp);
 
-let celsiTemp = document.querySelector("#searchTemp");
+let celsi = document.querySelector("#celsi");
+celsi.addEventListener("click", showCelsiTemp);
+
+let celsiTemp = null;
