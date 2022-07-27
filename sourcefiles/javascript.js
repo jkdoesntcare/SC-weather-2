@@ -21,24 +21,29 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
-function displayForecast() {
-  let forecastElement = document.querySelector("#weatherForecast");
-  let forecastHTML = `<div class="row">`;
-  let days = ["MON", "TUES", "WED", "THURS", "FRI", "SAT", "SUN"];
+function displayForecast(response) {
+  let forecast = response.data.daily;
 
-  days.forEach(function (day) {
+  let forecastElement = document.querySelector("#weatherForecast");
+
+  let forecastHTML = `<div class="row">`;
+
+  forecast.forEach(function (forecastDay) {
     forecastHTML =
       forecastHTML +
       `
             <div class="col">
-              <div class="forecastDay">${day}</div>
-              <img src="images/sun.png" id="forecast-img" width="50px"/>
+              <div class="forecastDay">${forecastDay.dt}</div>
+              <img 
+              src="http://openweathermap.org/img/wn${forecastDay.weather[0].icon}@2x.png" 
+              id="forecast-img" 
+              width="50px"/>
               <div class="forecast-tempertures">
               <span class="forecast-max-temp">
-                18°
+                ${forecastDay.temp.max}°
               </span>
             <span class="forecast-min-temp">
-                12°
+                ${forecastDay.temp.min}°
               </span>
               </div>
             </div>
@@ -46,6 +51,13 @@ function displayForecast() {
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  let apiKey = "e765fe52026bce2fd4a1b8bc1e42692";
+  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}`;
+
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function displayTemperture(response) {
@@ -69,6 +81,7 @@ function displayTemperture(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  getForecast(response.data.coord);
 }
 
 function search(city) {
@@ -108,4 +121,3 @@ celsi.addEventListener("click", showCelsiTemp);
 let celsiTemp = null;
 
 search("New York");
-displayForecast();

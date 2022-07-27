@@ -77,12 +77,15 @@ button {
 
 .forecastDay {
   font-size: 13px;
+  text-align: center;
 }
 
 .forecast-tempertures {
   font-size: 11px;
+  text-align: center;
 }
 
 .forecast-min-temp {
   color: rgb(143, 142, 142);
+  text-align: center;
 }
