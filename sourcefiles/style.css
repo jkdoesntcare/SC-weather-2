@@ -67,4 +67,17 @@ button {
 
 .forecast {
   width: 500px;
+  text-align: center;
+}
+
+.forecastDay {
+  font-size: 13px;
+}
+
+.forecast-tempertures {
+  font-size: 11px;
+}
+
+.forecast-min-temp {
+  color: rgb(143, 142, 142);
 }
