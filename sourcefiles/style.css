@@ -17,8 +17,11 @@ ul {
 }
 
 small {
+  font-size: 11px;
   text-align: center;
   display: block;
+  position: relative;
+  margin: 10px;
 }
 
 form {
@@ -88,4 +91,30 @@ button {
 .forecast-min-temp {
   color: rgb(143, 142, 142);
   text-align: center;
+}
+
+#scroll-container {
+  border: none;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+#scroll-text {
+  /* animation properties */
+  -moz-transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+
+  -moz-animation: my-animation 15s linear infinite;
+  -webkit-animation: my-animation 15s linear infinite;
+  animation: my-animation 15s linear infinite;
+}
+
+@-webkit-keyframes my-animation {
+  from {
+    -webkit-transform: translateX(100%);
+  }
+  to {
+    -webkit-transform: translateX(-100%);
+  }
 }
